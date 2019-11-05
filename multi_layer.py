@@ -14,7 +14,7 @@ import seaborn as sns
 #np.random.seed(0)
 
 # Problem
-_pbm = "multi" # reg, multi
+_pbm = "reg" # reg, multi
 
 # Training Data
 N = 100
@@ -43,7 +43,7 @@ dim_in = len(X)
 dim_out = len(D)
 
 # Hyper Parameter
-_ite = 10**4
+_ite = 10**2
 b_size = 1
 num_l = 2
 num_u = [dim_in, 20, dim_out]
@@ -89,7 +89,8 @@ for _s in range(_ite):
 #    class_error.append( ( np.sum( (y>=0.5) == D) / 2.) / N )
     train_error.append( ef(D,y) )
 
-plt.plot(train_error)
+
+plt.plot((train_error))
 plt.show()
 #plt.plot(class_error)
 #plt.show()
